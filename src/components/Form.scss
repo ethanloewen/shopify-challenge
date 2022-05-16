@@ -1,0 +1,50 @@
+#user-form {
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    width: 60%;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label, input {
+    display: block;
+  }
+
+  label {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+  }
+
+  textarea {
+    height: 200px;
+    width: 100%;
+    padding: 15px 15px;
+    box-sizing: border-box;
+
+    // remove default styling
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
+  }
+
+  button {
+    padding: 8px 12px;
+    align-self: center;
+    border-radius: 6px;
+    border: 1px transparent;
+    background-color: rgb(221, 220, 220);
+  }
+
+  button:hover {
+    background-color: rgb(122, 235, 120);
+  }
+}
