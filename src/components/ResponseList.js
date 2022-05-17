@@ -1,5 +1,6 @@
 import './ResponseList.scss';
 import Response from './Response';
+import Loading from './Loading';
 
 export default function ResponseList(props) {
 
@@ -12,6 +13,7 @@ export default function ResponseList(props) {
 
   return (
     <section id='response-list'>
+      <Loading />
       {/* <Response input={props.latestInput} output={props.latestOutput} /> */}
       {formattedResponse.reverse()}
     </section>
