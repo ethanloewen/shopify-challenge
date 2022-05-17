@@ -30,6 +30,7 @@ export default function Form(props) {
     .then(response => response.json())
     .then(data => {
       console.log('data', data.choices[0].text);
+      props.setLatestInput(userText);
       props.setLatestOutput(data.choices[0].text);
     });
   };
