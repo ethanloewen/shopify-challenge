@@ -1,16 +1,16 @@
 import './App.scss';
 import React, {useState} from 'react';
 import Form from './components/Form';
-import Response from './components/Response';
+import ResponseList from './components/ResponseList';
 
 function App() {
-  const [latestInput, setLatestInput] = useState('');
-  const [latestOutput, setLatestOutput] = useState('');
+  const [latestInput, setLatestInput] = useState([]);
+  const [latestOutput, setLatestOutput] = useState([]);
 
   return (
     <div className="App">
       <Form setLatestOutput={setLatestOutput} setLatestInput={setLatestInput} />
-      <Response input={latestInput} output={latestOutput} />
+      <ResponseList latestInput={latestInput} latestOutput={latestOutput} />
     </div>
   );
 }
