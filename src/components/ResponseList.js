@@ -6,14 +6,14 @@ export default function ResponseList(props) {
   const prompts = props.latestInput || ['empty prompt'];
   const responses = props.latestOutput || ['empty response'];
 
-  const formattedRespones = responses.map((res, index) => {
+  const formattedResponse = responses.map((res, index) => {
     return <Response key={index} input={prompts[index]} output={res} />
   });
 
   return (
     <section id='response-list'>
       {/* <Response input={props.latestInput} output={props.latestOutput} /> */}
-      {formattedRespones.reverse()}
+      {formattedResponse.reverse()}
     </section>
   );
 }
