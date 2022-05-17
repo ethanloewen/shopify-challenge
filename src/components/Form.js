@@ -22,7 +22,7 @@ export default function Form(props) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
         // Authorization: `Bearer ${process.env.OPENAI_SECRET}`,
       },
       body: JSON.stringify(data),
