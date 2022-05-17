@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div className="App">
-      <Form />
-      <Response input={'Prompt here...'} output={'Response here...'}/>
+      <Form setLatestOutput={setLatestOutput} />
+      <Response input={'Prompt here...'} output={latestOutput} />
     </div>
   );
 }

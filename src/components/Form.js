@@ -1,7 +1,7 @@
 import './Form.scss';
 import $ from 'jquery';
 
-export default function Form() {
+export default function Form(props) {
 
   // submit the text area value
   const submitText = (e) => {
@@ -19,16 +19,19 @@ export default function Form() {
      };
 
     fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer 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`,
-      // Authorization: `Bearer ${process.env.OPENAI_SECRET}`,
-    },
-    body: JSON.stringify(data),
-  })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer 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`,
+        // Authorization: `Bearer ${process.env.OPENAI_SECRET}`,
+      },
+      body: JSON.stringify(data),
+    })
     .then(response => response.json())
-    .then(data => console.log('data', data.choices[0].text));
+    .then(data => {
+      console.log('data', data.choices[0].text);
+      props.setLatestOutput(data.choices[0].text);
+    });
   };
 
   return (
