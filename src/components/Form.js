@@ -8,8 +8,6 @@ export default function Form(props) {
   const [engineName, setEngineName] = useState('Curie');
   const [engineId, setEngineId] = useState('text-curie-001');
 
-  console.log('API', process.env.REACT_APP_SECRET);
-
   // submit the text area value
   const submitText = (e) => {
     e.preventDefault();
