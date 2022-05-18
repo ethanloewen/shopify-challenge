@@ -1,25 +1,34 @@
 .loading-container {
   width: 100%;
-  height: 50px;
-  
+  height: 30px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   #loading-box {
     width: 60%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid rgb(58, 135, 168);
-    // padding: 10px 0px;
-    margin-bottom: 10px;
 
     #loading-icon {
+      color: rgb(16, 107, 177);
       height: 25px;
       width: 25px;
+      animation: rotation 1.2s infinite ease-in-out;
     }
   }
 
   
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

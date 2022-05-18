@@ -4,8 +4,8 @@ import Loading from './Loading';
 
 export default function ResponseList(props) {
 
-  const prompts = props.latestInput || ['empty prompt'];
-  const responses = props.latestOutput || ['empty response'];
+  const prompts = props.latestInput || [];
+  const responses = props.latestOutput || [];
 
   const formattedResponse = responses.map((res, index) => {
     return <Response key={index} input={prompts[index]} output={res} />
@@ -13,7 +13,7 @@ export default function ResponseList(props) {
 
   return (
     <section id='response-list'>
-      <Loading />
+      <Loading loading={props.loading} />
       {/* <Response input={props.latestInput} output={props.latestOutput} /> */}
       {formattedResponse.reverse()}
     </section>

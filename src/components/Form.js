@@ -6,6 +6,8 @@ export default function Form(props) {
   // submit the text area value
   const submitText = (e) => {
     e.preventDefault();
+    // run loading animation
+    props.setLoading(true);
     const userText = $('#user-text').val();
     console.log(userText);
 
@@ -29,6 +31,7 @@ export default function Form(props) {
     })
     .then(response => response.json())
     .then(data => {
+      props.setLoading(false);
       console.log('data', data.choices[0].text);
       props.setLatestInput(prev => [...prev, userText]);
       props.setLatestOutput(prev => [...prev, data.choices[0].text]);
