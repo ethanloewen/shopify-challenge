@@ -10,9 +10,10 @@ export default function Form(props) {
 
   // set random prompt for user
   const setPrompt = () => {
-    const prompts = ['How far away is the moon?', 'Write me a song about a tree', 'How old is the earth?', 'Pick a number between 1 and 100', 'What time is it in Japan?'];
+    const prompts = ['How far away is the moon?', 'Write me a song about a tree', 'How old is the earth?', 'Pick a number between 1 and 100', 'What time is it in Japan?', 'What is 99 * 81 + 20 % 25?', 'Pick a username for me to use online', 'When is the next solar eclipse?', 'What is the legal drinking age in Spain?'];
   
     const rand = Math.floor(Math.random() * (prompts.length));
+    // set the text area to the chosen prompt
     $('#user-text').val(prompts[rand]);
   };
 
