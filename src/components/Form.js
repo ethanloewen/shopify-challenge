@@ -32,7 +32,11 @@ export default function Form(props) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // for heroku
         Authorization: `Bearer ${process.env.REACT_APP_SECRET}`,
+
+        // for localhost
+        // Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
       body: JSON.stringify(data),
     })
