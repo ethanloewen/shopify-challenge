@@ -14,7 +14,6 @@ export default function Form(props) {
   
     const rand = Math.floor(Math.random() * (prompts.length));
     $('#user-text').val(prompts[rand]);
-    console.log(prompts[rand]);
   };
 
   // submit the text area value
@@ -42,10 +41,10 @@ export default function Form(props) {
       headers: {
         "Content-Type": "application/json",
         // for heroku
-        // Authorization: `Bearer ${process.env.REACT_APP_SECRET}`,
+        Authorization: `Bearer ${process.env.REACT_APP_SECRET}`,
 
         // for localhost
-        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+        // Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
       body: JSON.stringify(data),
     })
