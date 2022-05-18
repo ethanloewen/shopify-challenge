@@ -1,5 +1,4 @@
 import './Help.scss';
-// import { setPrompt } from '../helpers/pickPrompt.js';
 
 export default function Help(props) {
 

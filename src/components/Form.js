@@ -4,11 +4,9 @@ import { useState } from 'react';
 import Dropdown from './Dropdown';
 import Help from './Help';
 
-
 export default function Form(props) {
   const [engineName, setEngineName] = useState('Curie');
   const [engineId, setEngineId] = useState('text-curie-001');
-  // const [prompt, setPrompt] = useState('');
 
   // set random prompt for user
   const setPrompt = () => {
