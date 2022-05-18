@@ -8,14 +8,20 @@
     flex-direction: column;
   }
 
-  label, input {
-    display: block;
-  }
-
-  label {
+  #header-wrap {
+    width: 100%;
     height: 50px;
-    line-height: 50px;
-    padding-left: 15px;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    label {
+      height: 50px;
+      line-height: 50px;
+      padding-left: 15px;
+      border: 1px solid red;
+    }
   }
 
   textarea {

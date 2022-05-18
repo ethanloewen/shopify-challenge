@@ -1,0 +1,32 @@
+.dropdown-container {
+  width: 100px;
+  height: 25px;
+  border: 1px solid red;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 15px;
+  position: relative;
+
+  h1 {
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+  }
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-container:hover .dropdown-content {
+  height: 25px;
+  display: block;
+  position: absolute;
+  border: 1px solid green;
+  min-width: 100px;
+}

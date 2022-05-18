@@ -1,5 +1,6 @@
 import './Form.scss';
 import $ from 'jquery';
+import Dropdown from './Dropdown';
 
 export default function Form(props) {
 
@@ -42,7 +43,10 @@ export default function Form(props) {
   return (
       <form id='user-form' action='./#'>
         <div className='wrapper'>
-          <label htmlFor='ftext'>Say something to OpenAI:</label>
+          <div id='header-wrap'>
+            <label htmlFor='ftext'>Say something to OpenAI:</label>
+            <Dropdown id='drop' />
+          </div>
           <textarea id='user-text' rows = "5" cols = "60" name = "description"></textarea>
           <button onClick={(e) => submitText(e)}>submit</button>
         </div>
