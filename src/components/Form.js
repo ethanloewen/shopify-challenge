@@ -32,8 +32,7 @@ export default function Form(props) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
-        // Authorization: `Bearer ${process.env.OPENAI_SECRET}`,
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
       body: JSON.stringify(data),
     })
