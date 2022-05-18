@@ -10,6 +10,9 @@ function App() {
 
   return (
     <div className="App">
+      <section id='logo'>
+        <img alt='OpenAI Logo' src={require('./openAI_logo.png')}></img>
+      </section>
       <Form setLatestOutput={setLatestOutput} setLatestInput={setLatestInput} setLoading={setLoading} />
       <ResponseList latestInput={latestInput} latestOutput={latestOutput} loading={loading} />
     </div>
