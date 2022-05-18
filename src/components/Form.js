@@ -19,12 +19,13 @@ export default function Form(props) {
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
      };
+    //  "https://api.openai.com/v1/engines/text-curie-001/completions"
 
-    fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
+    fetch("https://api.openai.com/v1/engines/text-babbage-001/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
         // Authorization: `Bearer ${process.env.OPENAI_SECRET}`,
       },
       body: JSON.stringify(data),
@@ -41,7 +42,7 @@ export default function Form(props) {
   return (
       <form id='user-form' action='./#'>
         <div className='wrapper'>
-          <label htmlFor='ftext'>Say something:</label>
+          <label htmlFor='ftext'>Say something to OpenAI:</label>
           <textarea id='user-text' rows = "5" cols = "60" name = "description"></textarea>
           <button onClick={(e) => submitText(e)}>submit</button>
         </div>
