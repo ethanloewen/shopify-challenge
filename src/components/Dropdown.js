@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './Dropdown.scss';
 
 // fontAwsome imports
@@ -6,8 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function Loading(props) {
-  // const [engineName, setEngineName] = useState('Curie');
-  // const [engineId, setEngineId] = useState(1);
 
   const updateEngine = (name, id) => {
     props.setEngineId(id);
