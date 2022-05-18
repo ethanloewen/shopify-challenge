@@ -1,14 +1,11 @@
 import './Help.scss';
-
-// fontAwesome imports
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { pickPrompt } from '../helpers/pickPrompt.js';
 
 export default function Help(props) {
 
   return (
     <div className='help-container'>
-      <button onClick={() => console.log('test button')}>Type for me</button>
+      <button onClick={() => pickPrompt()}>type for me</button>
     </div>
   );
 }

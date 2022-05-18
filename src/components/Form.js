@@ -8,6 +8,7 @@ import Help from './Help';
 export default function Form(props) {
   const [engineName, setEngineName] = useState('Curie');
   const [engineId, setEngineId] = useState('text-curie-001');
+  const [prompt, setPrompt] = useState('');
 
   // submit the text area value
   const submitText = (e) => {
