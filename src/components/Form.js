@@ -16,6 +16,7 @@ export default function Form(props) {
     const userText = $('#user-text').val();
     console.log(userText);
 
+    // config for openAI
     const data = {
       prompt: userText,
       temperature: 0.5,
@@ -33,10 +34,10 @@ export default function Form(props) {
       headers: {
         "Content-Type": "application/json",
         // for heroku
-        Authorization: `Bearer ${process.env.REACT_APP_SECRET}`,
+        // Authorization: `Bearer ${process.env.REACT_APP_SECRET}`,
 
         // for localhost
-        // Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
       body: JSON.stringify(data),
     })
