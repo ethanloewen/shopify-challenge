@@ -6,7 +6,7 @@ import Dropdown from './Dropdown';
 
 export default function Form(props) {
   const [engineName, setEngineName] = useState('Curie');
-  const [engineId, setEngineId] = useState(1);
+  const [engineId, setEngineId] = useState('text-curie-001');
 
   // submit the text area value
   const submitText = (e) => {
@@ -23,10 +23,12 @@ export default function Form(props) {
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
-     };
-    //  "https://api.openai.com/v1/engines/text-curie-001/completions"
+    };
+    
+    const URL = `https://api.openai.com/v1/engines/${engineId}/completions`;
+    console.log(URL);
 
-    fetch("https://api.openai.com/v1/engines/text-babbage-001/completions", {
+    fetch(URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
