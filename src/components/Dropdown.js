@@ -14,6 +14,7 @@ export default function Loading(props) {
   return (
     <div className='dropdown-container'>
       <h1>{props.engineName}</h1>
+      <h2>Engine: </h2>
       <FontAwesomeIcon id='down-arrow' icon={faCaretDown} />
       <div className='dropdown-content'>
         <p onClick={() => updateEngine('Davinci', 'text-davinci-002')}>Davinci</p>
