@@ -1,8 +1,12 @@
 import './Form.scss';
 import $ from 'jquery';
+import { useState } from 'react';
 import Dropdown from './Dropdown';
 
+
 export default function Form(props) {
+  const [engineName, setEngineName] = useState('Curie');
+  const [engineId, setEngineId] = useState(1);
 
   // submit the text area value
   const submitText = (e) => {
@@ -45,7 +49,7 @@ export default function Form(props) {
         <div className='wrapper'>
           <div id='header-wrap'>
             <label htmlFor='ftext'>Say something to OpenAI:</label>
-            <Dropdown id='drop' />
+            <Dropdown id='drop' engineName={engineName} setEngineName={setEngineName} engineId={engineId} setEngineId={setEngineId} />
           </div>
           <textarea id='user-text' rows = "5" cols = "60" name = "description"></textarea>
           <button onClick={(e) => submitText(e)}>submit</button>
