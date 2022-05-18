@@ -8,7 +8,16 @@ import Help from './Help';
 export default function Form(props) {
   const [engineName, setEngineName] = useState('Curie');
   const [engineId, setEngineId] = useState('text-curie-001');
-  const [prompt, setPrompt] = useState('');
+  // const [prompt, setPrompt] = useState('');
+
+  // set random prompt for user
+  const setPrompt = () => {
+    const prompts = ['How far away is the moon?', 'Write me a song about a tree', 'How old is the earth?', 'Pick a number between 1 and 100', 'What time is it in Japan?'];
+  
+    const rand = Math.floor(Math.random() * (prompts.length));
+    $('#user-text').val(prompts[rand]);
+    console.log(prompts[rand]);
+  };
 
   // submit the text area value
   const submitText = (e) => {
@@ -29,7 +38,6 @@ export default function Form(props) {
     };
     
     const URL = `https://api.openai.com/v1/engines/${engineId}/completions`;
-    console.log(URL);
 
     fetch(URL, {
       method: "POST",
@@ -46,7 +54,8 @@ export default function Form(props) {
     .then(response => response.json())
     .then(data => {
       props.setLoading(false);
-      console.log('data', data.choices[0].text);
+      // console.log('data', data.choices[0].text);
+      $('#user-text').val('');
       props.setLatestInput(prev => [...prev, userText]);
       props.setLatestOutput(prev => [...prev, data.choices[0].text]);
     });
@@ -64,7 +73,7 @@ export default function Form(props) {
           <button onClick={(e) => submitText(e)}>submit</button>
         </div>
       </form>
-      <Help />
+      <Help setPrompt={setPrompt} />
     </>
   );
 }
