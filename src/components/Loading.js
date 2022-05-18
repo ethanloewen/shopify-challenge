@@ -1,4 +1,6 @@
 import './Loading.scss';
+
+// fontAwesome imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
