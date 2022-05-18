@@ -6,17 +6,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function Loading(props) {
-  const [engine, setEngine] = useState('Curie');
+  const [engineName, setEngineName] = useState('Curie');
+  const [engineId, setEngineId] = useState(1);
+
+  const updateEngine = (name, id) => {
+    setEngineId(id);
+    setEngineName(name);
+  }
 
   return (
     <div className='dropdown-container'>
-      <h1>{engine}</h1>
+      <h1>{engineName}</h1>
       <FontAwesomeIcon id='down-arrow' icon={faCaretDown} />
       <div className='dropdown-content'>
-        <p onClick={() => console.log('test')}>Davinci</p>
-        <p>Curie</p>
-        <p>Babbage</p>
-        <p>Ada</p>
+        <p onClick={() => updateEngine('Davinci', 0)}>Davinci</p>
+        <p onClick={() => updateEngine('Curie', 1)}>Curie</p>
+        <p onClick={() => updateEngine('Babbage', 2)}>Babbage</p>
+        <p onClick={() => updateEngine('Ada', 3)}>Ada</p>
       </div>
     </div>
   );
