@@ -1,0 +1,17 @@
+.help-container {
+  position: absolute;
+  top: 360px;
+  right: 20.5%;
+
+  button {
+    padding: 8px 12px;
+    align-self: center;
+    border-radius: 6px;
+    border: 1px transparent;
+    background-color: rgb(221, 220, 220);
+  }
+
+  button:hover {
+    background-color: rgba(16, 107, 177, 0.5);;
+  }
+}

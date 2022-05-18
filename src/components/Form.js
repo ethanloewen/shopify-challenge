@@ -2,6 +2,7 @@ import './Form.scss';
 import $ from 'jquery';
 import { useState } from 'react';
 import Dropdown from './Dropdown';
+import Help from './Help';
 
 
 export default function Form(props) {
@@ -51,6 +52,7 @@ export default function Form(props) {
   };
 
   return (
+    <>
       <form id='user-form' action='./#'>
         <div className='wrapper'>
           <div id='header-wrap'>
@@ -61,5 +63,7 @@ export default function Form(props) {
           <button onClick={(e) => submitText(e)}>submit</button>
         </div>
       </form>
+      <Help />
+    </>
   );
 }
